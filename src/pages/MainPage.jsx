@@ -30,7 +30,19 @@ export const MainPage = () => {
     }
 
     const onInput = (input) => {
-        setState(JSON.parse(input));
+        if(input.length){
+            try {
+                setState(JSON.parse(input));
+            }
+            catch {
+                alert("Не правильный формат вводимых данных");
+            }
+        }
+        else {
+            alert("Нельзя установить пустую строку")
+        }
+
+
     }
 
     return (
