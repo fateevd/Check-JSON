@@ -1,24 +1,23 @@
 import React, {useState} from 'react';
+import CustomButton from "../Buttons/CustomButton";
 
-const Form = () => {
+const Form = ({copyState , onInput}) => {
 
     const [input, setInput] = useState('');
-    const [copy, setCopy] = useState([]);
-    const copyState = event => {
-        event.preventDefault();
-        setCopy(navigator.clipboard.writeText(JSON.stringify(state)));
-    }
+
 
     const setText = event => {
         event.preventDefault();
-        setState(JSON.parse(input));
+        onInput(input);
         setInput('');
     }
+
+
     return (
         <form>
             <input value={input} onChange={e => setInput(e.target.value)} type="text"/>
-            <button onClick={(event) => setText(event)}>setState</button>
-            <button onClick={(event) => copyState(event)}>copyState</button>
+            <CustomButton onClick={(event) => setText(event)}>setState</CustomButton>
+            <CustomButton onClick={(event) => copyState(event)}>copyState</CustomButton>
         </form>
     );
 };

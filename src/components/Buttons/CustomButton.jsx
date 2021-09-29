@@ -1,10 +1,8 @@
 import React from 'react';
 
-const CustomButton = () => {
+const CustomButton = ({children, ...props}) => {
     return (
-        <div>
-            
-        </div>
+        <button {...props}>{children}</button>
     );
 };
 
