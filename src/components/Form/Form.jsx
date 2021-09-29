@@ -14,10 +14,10 @@ const Form = ({copyState , onInput}) => {
 
 
     return (
-        <form>
+        <form className="form">
             <input value={input} onChange={e => setInput(e.target.value)} type="text"/>
-            <CustomButton onClick={(event) => setText(event)}>setState</CustomButton>
-            <CustomButton onClick={(event) => copyState(event)}>copyState</CustomButton>
+            <CustomButton onClick={(event) => setText(event)}>set state</CustomButton>
+            <CustomButton onClick={(event) => copyState(event)}>save state</CustomButton>
         </form>
     );
 };

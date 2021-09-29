@@ -1,4 +1,4 @@
-export const json = [
+export const initialState = [
     {
         id: 10,
         title: "radio 1",

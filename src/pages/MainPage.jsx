@@ -1,10 +1,12 @@
 import {useState} from "react";
-import {json} from "../api/json";
-import CustomButton from "../components/Buttons/CustomButton";
+import {initialState} from "../api/json";
 import Form from "../components/Form/Form";
+import CheckBox from "../components/CheackBox/CheckBox";
+import RadioButton from "../components/RadioButton/RadioButton";
 
 export const MainPage = () => {
-    const [state, setState] = useState(json);
+    const [state, setState] = useState(initialState);
+
     const onToggle = (id) => {
         setState(
             state.map(item => {
@@ -32,13 +34,13 @@ export const MainPage = () => {
     }
 
     return (
-        <div className="App">
-            <Form  onInput={onInput}  copyState={copyState} />
+        <div >
+            <Form  onInput={onInput} copyState={copyState}/>
             {state.map(item =>
                 <div key={item.id}>
-                    <input type="radio" checked={item.completed} onChange={() => onToggle(item.id)}/>{item.title}
-                    {item.checked.map(item =>
-
+                    <RadioButton  item={item} onChange={onToggle}/>
+                    {item.checked.map(subItem =>
+                        <CheckBox key={subItem.id} subItem={subItem}  onChange={onToggle}/>
                     )}
                 </div>
             )}
