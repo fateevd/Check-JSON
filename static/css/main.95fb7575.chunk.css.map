@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/App.css"],"names":[],"mappings":"AAAA,KACE,iBACF,CAEA,MACE,WACF,CAMA,uBACE,UACF","file":"main.95fb7575.chunk.css","sourcesContent":[".App {\n  text-align: center;\n}\n\n.form {\n  margin: 10px;\n}\n\n.radioButton {\n  margin: 5px;\n}\n\n.checkBox {\n  margin: 5px;\n}"]}
